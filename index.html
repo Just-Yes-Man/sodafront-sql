@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p>
+        Consumo de REST-API de Refrescos
+    </p>
+
+    <div>
+        <label>nombre </label>
+        <input type="text" id="nombre">
+    </div>
+    <div>
+        <label>marca </label>
+        <input type="text" id="marca">
+    </div>
+
+    <div>
+        <label>tipo </label>
+        <input type="text" id="tipo">
+    </div>
+
+    <div>
+        <label>sabor </label>
+        <input type="text" id="sabor">
+    </div>
+    <div>
+        <label>tamano </label>
+        <input type="text" id="tamano">
+    </div>
+
+    <div>
+        <label>precio </label>
+        <input type="text" id="precio">
+    </div>
+
+    <div>
+        <label>stock </label>
+        <input type="text" id="stock">
+    </div>
+
+    <button onclick="postRefersco()"> POST soda </button>
+
+    <button onclick="getRefrescos()"> GET soda </button>
+
+    <div id="resultado"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="callrestapi.js"></script>
+
+</body>
+
+</html>
