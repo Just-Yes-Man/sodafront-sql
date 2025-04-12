@@ -1,5 +1,5 @@
-var url = "http://localhost:8080/api/soda";
-//var url = "https://pg-restapi-nrns.onrender.com/api/users";
+//var url = "http://localhost:8080/api/soda";
+var url = "https://mysql-sodaapi.onrender.com/api/soda";
 
 function postRefersco() {
 
