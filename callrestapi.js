@@ -57,9 +57,39 @@ function editarRefresco(id) {
     });
 }
 
+function getById() {
+    const id = $('#id').val();
+    $.getJSON(url + '/' + id, function (data) {
+        const refresco = data.refresco;
+
+        if (refresco) {
+            var htmlTableUsers = '<table border="1">' +
+                '<tr><th>ID</th><th>Nombre</th><th>Marca</th><th>Tipo</th><th>Sabor</th><th>Tamaño</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr>';
+            htmlTableUsers += '<tr>' +
+                '<td>' + refresco.id + '</td>' +
+                '<td>' + refresco.nombre + '</td>' +
+                '<td>' + refresco.marca + '</td>' +
+                '<td>' + refresco.tipo + '</td>' +
+                '<td>' + refresco.sabor + '</td>' +
+                '<td>' + refresco.tamano + '</td>' +
+                '<td>' + refresco.precio + '</td>' +
+                '<td>' + refresco.stock + '</td>' +
+                '<td>' +
+                '<button onclick="editarRefresco(' + refresco.id + ')">Editar</button> ' +
+                '<button onclick="deleteRefresco(' + refresco.id + ')">Eliminar</button>' +
+                '</td>'
+            '</tr>';
+            htmlTableUsers += '</table>';
+            $('#resultado').html(htmlTableUsers);
+        } else {
+            alert('Refresco no encontrado.');
+        }
+    });
+}
+
 
 function updateRefresco() {
-    const id = $('#btn-update').data('id'); // ID almacenado
+    const id = $('#btn-update').data('id');
 
     var mysoda = {
         nombre: $('#nombre').val(),
@@ -88,6 +118,8 @@ function updateRefresco() {
         }
     });
 }
+
+
 
 
 
