@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 
+<head>
+    <meta charset="UTF-8">
+    <title>REST API Refrescos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
 <body>
-    <p>
-        Consumo de REST-API de Refrescos
-    </p>
+    <p><i class="fas fa-glass-whiskey"></i> Consumo de REST-API de Refrescos</p>
 
     <div>
         <label>nombre </label>
@@ -45,12 +51,12 @@
     <div>
         <label>ID de refresco </label>
         <input type="text" id="id">
-        <button onclick="getById()">POST soda</button>
+        <button onclick="getById()">Get soda</button>
     </div>
     <br>
 
-    <button onclick="postRefersco()">POST soda</button>
-    <button onclick="getRefrescos()"> GET soda </button>
+    <button onclick="postRefersco()"><i class="fas fa-wine-bottle"></i></i>POST soda</button>
+    <button onclick="getRefrescos()"><i class="fas fa-wine-bottle"></i>GET sodas</button>
     <button id="btn-update" style="display:none;" onclick="updateRefresco()">UPDATE soda</button>
 
 

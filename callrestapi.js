@@ -31,7 +31,10 @@ function postRefersco() {
         contentType: 'application/json',
         success: function (data) {
             console.log(data);
-            $('#resultado').html(JSON.stringify(data.refresco));
+            limpiarInputs()
+            $('#resultado').html(`
+                <div class="mensaje-exito">✅ Refresco creado correctamente</div>
+            `);
         },
         data: JSON.stringify(mysoda)
     });
@@ -110,6 +113,7 @@ function updateRefresco() {
         success: function (data) {
             alert('Refresco actualizado');
             $('#btn-update').hide();
+            limpiarInputs()
             getRefrescos();
         },
         error: function (err) {
@@ -136,19 +140,20 @@ function getRefrescos() {
 
         arrSodas.forEach(function (item) {
             htmlTableUsers += '<tr>' +
-                '<td>' + item.id + '</td>' +
-                '<td>' + item.nombre + '</td>' +
-                '<td>' + item.marca + '</td>' +
-                '<td>' + item.tipo + '</td>' +
-                '<td>' + item.sabor + '</td>' +
-                '<td>' + item.tamano + '</td>' +
-                '<td>' + item.precio + '</td>' +
-                '<td>' + item.stock + '</td>' +
-                '<td>' +
+                '<td data-label="ID">' + item.id + '</td>' +
+                '<td data-label="Nombre">' + item.nombre + '</td>' +
+                '<td data-label="Marca">' + item.marca + '</td>' +
+                '<td data-label="Tipo">' + item.tipo + '</td>' +
+                '<td data-label="Sabor">' + item.sabor + '</td>' +
+                '<td data-label="Tamaño">' + item.tamano + '</td>' +
+                '<td data-label="Precio">' + item.precio + '</td>' +
+                '<td data-label="Stock">' + item.stock + '</td>' +
+                '<td data-label="Acciones">' +
                 '<button onclick="editarRefresco(' + item.id + ')">Editar</button> ' +
                 '<button onclick="deleteRefresco(' + item.id + ')">Eliminar</button>' +
-                '</td>'
-            '</tr>';
+                '</td>' +
+                '</tr>';
+
         });
 
         htmlTableUsers += '</table>';
@@ -172,4 +177,15 @@ function deleteRefresco(id) {
             console.error(err);
         }
     })
+}
+
+function limpiarInputs() {
+    $('#nombre').val('');
+    $('#marca').val('');
+    $('#tipo').val('');
+    $('#sabor').val('');
+    $('#tamano').val('');
+    $('#precio').val('');
+    $('#stock').val('');
+    $('#id').val('');
 }
