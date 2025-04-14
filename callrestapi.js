@@ -54,6 +54,7 @@ function editarRefresco(id) {
             $('#stock').val(refresco.stock);
 
             $('#btn-update').show().data('id', id);
+            $('#resultado').html("");
         } else {
             alert('Refresco no encontrado.');
         }
